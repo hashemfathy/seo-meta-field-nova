@@ -111,7 +111,7 @@ return [
   'sitemap_path' => '/sitemap',
   
 
-  'disk' => env('SEO_IMAGE_DISK', 'public')
+  'disk' => env('SEO_IMAGE_DISK', 'public'),
   
   /*
   |--------------------------------------------------------------------------
