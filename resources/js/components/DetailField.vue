@@ -18,7 +18,7 @@
                         <div
                             class="seo-meta-detail__google__url"
                         >{{
-                                (field.url || field.hostname).replace(/:\/\//, ':||').replace(/(\/)/g, ' › ').replace(':||', '://')
+                                (field.hostname).replace(/:\/\//, ':||').replace(/(\/)/g, ' › ').replace(':||', '://')
                             }}
                         </div>
                         <div
