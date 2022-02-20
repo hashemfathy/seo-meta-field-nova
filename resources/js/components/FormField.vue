@@ -2,7 +2,7 @@
     <default-field :field="field" :errors="errors">
         <template slot="field" v-if="ready">
           <div v-for="(locale,index) in availableLocales" :key="index">
-            <div class="form-group mb-3">
+            <div v-if="value.title" class="form-group mb-3">
                 <label class="mb-1 block">Title [{{locale}}]:</label>
                 <input
                     :id="field.name + locale + '-title'"
@@ -18,7 +18,7 @@
                     v-if="field.title_format && field.title_format !== ':text'"
                 >{{ field.title_format.replace(':text', value.title[locale] || '') }}</p>
             </div>
-            <div class="form-group mb-3">
+            <div v-if="value.description" class="form-group mb-3">
                 <label class="mb-1 block">Description [{{locale}}]:</label>
                 <textarea
                     class="w-full form-control form-input form-input-bordered py-3 h-auto"
@@ -28,7 +28,7 @@
                     @input="setHasChanged"
                 />
             </div>
-            <div class="form-group mb-3">
+            <div v-if="value.keywords" class="form-group mb-3">
                 <label class="mb-1 block">Keywords [{{locale}}]:</label>
                 <textarea
                     class="w-full form-control form-input form-input-bordered py-3 h-auto"
